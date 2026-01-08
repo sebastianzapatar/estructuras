@@ -29,4 +29,9 @@ public class JavaLinkedList {
 
         System.out.println(list); // imprime [10, 14]
     }
+    static void addSafe(LinkedList<Integer> list, int value, int index) {
+        if (index <= 0) list.addFirst(value);
+        else if (index >= list.size()) list.addLast(value);
+        else list.add(index, value);
+    }
 }
