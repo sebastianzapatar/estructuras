@@ -2,21 +2,17 @@ package linkedList;
 
 public class MainLL {
     static void main() {
-        SingleLinkedList<Integer> singleLinkedList=new SingleLinkedList<>();
-        singleLinkedList.createSingleLinkedList(10);
-        singleLinkedList.insertE(11,1);
-        singleLinkedList.insertE(12,2);
-        singleLinkedList.insertE(13,4);
-        singleLinkedList.insertE(14,9);
+        SingleLinkedList<Integer> singlyLinkedList = new SingleLinkedList();
+        singlyLinkedList.insertE(5,1);  // Success
 
-        singleLinkedList.showLinkedList();
-        System.out.println();
-
-        singleLinkedList.delete(11);
-        singleLinkedList.delete(13);
-        singleLinkedList.delete(12);
-        singleLinkedList.showLinkedList();
-        System.out.println();
+        System.out.println(singlyLinkedList.head.data); // 5
+        System.out.println(singlyLinkedList.tail.data); // 5
+        System.out.println(singlyLinkedList.size);
+        singlyLinkedList.insertE(10,4);    // Success
+        System.out.println(singlyLinkedList.head.data);
+        System.out.println(singlyLinkedList.size);
+        System.out.println(singlyLinkedList.head.next.data);
+        System.out.println(singlyLinkedList.tail.data);
 
     }
 }

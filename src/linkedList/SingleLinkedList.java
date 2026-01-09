@@ -52,7 +52,7 @@ public class SingleLinkedList<T> {
             head=head.next;
             size--;
         }
-        else if(index==size-1){
+        else if(index>=size-1){
             Node<T> tempNode = head;
             for (int i = 0; i < size - 1; i++) {
                 tempNode = tempNode.next;
@@ -117,6 +117,46 @@ public class SingleLinkedList<T> {
     }
     public boolean isEmpty(){
         return size==0;
+    }
+    public String rotate(int number) {
+        int index = number;
+        if (number < 0) {
+            index = number + size;
+        }
+        if (index < 0 || index >= size) {
+            return null;
+        }
+        if (index == 0) {
+            return "No Rotation";
+        }
+        Node prevNode = head;
+        for(int i=0; i<index-1; i++) {
+            prevNode = prevNode.next;
+        }
+        if (prevNode == null) {
+            return "No Rotation";
+        }
+        tail.next = head;
+        head = prevNode.next;
+        tail = prevNode;
+        prevNode.next = null;
+        return "Success";
+    }
+    public boolean set(int index, T value) {
+        if (head == null) {
+            head.data = value;
+            tail.data = value;
+        } else {
+            Node<T> currentNode = head;
+            for (int i =0; i<index; i++) {
+                currentNode = currentNode.next;
+                if (currentNode == null) {
+                    return false;
+                }
+            }
+            currentNode.data = value;
+        }
+        return true;
     }
 
 }
