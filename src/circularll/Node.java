@@ -1,6 +1,6 @@
 package circularll;
 
 public class Node<T> {
-    private T value;
-    private Node<T> next;
+    public T value;
+    public Node<T> next;
 }
