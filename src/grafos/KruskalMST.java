@@ -1,7 +1,7 @@
 package grafos;
 import java.util.*;                      // Importa utilidades: listas, sort, etc.
 
-public class KruskalMST {                // Clase principal del algoritmo
+public class  KruskalMST {                // Clase principal del algoritmo
 
     // Representa una arista no dirigida con peso
     static class Edge {                  // Clase interna para modelar una arista
